@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positions</title>
+    <style>
+        p {
+            display:flex;
+            border: 1px solid black;
+            padding: 4px;
+        }
+        .static {
+            display:flex;
+            position: static;
+            background-color: greenyellow;
+        }
+        .relative {
+            display:flex;
+            position: relative;
+            top: 90px;
+            left: 40px;
+            background-color: greenyellow;
+        }
+        .absolute {
+            display:flex;
+            position: absolute;
+            top: 60px;
+            left: 60px;
+            background-color: greenyellow;
+        }
+        .parent {
+            display:flex;
+            position: relative;
+            background-color: orange;
+            border: 4px solid red;
+        }
+        .fixed {
+            display:flex;
+            position: fixed;
+            top: 10px;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>normal paragraph</p>
+        <p class="static">
+            static: default, 
+            does not affect top, right, bottom, left.
+            Allows elements to be positioned according to
+            the normal flow of the document.
+        </p>
+        <p>normal paragraph</p>
+    </section>
+    <section>
+        <p>normal paragraph</p>
+        <p class="relative">
+            relative: similar to static, except it positions the element relative to its original position in the document. Positioned with top, right, bottom, left values.
+        </p>
+        <p>normal paragraph</p>
+
+        <p>normal paragraph</p>
+        <p class="absolute">
+            absolute: removes elements from the normal flow.
+            Positioned relative to their closest positioned parent element (an ancestor element with a position value other than static).
+            If there are no positioned parents, they are
+            positioned relative to the document itself.
+        </p>
+        <p>normal paragraph</p>
+
+        <div class="parent">
+            <p class="absolute">absolute as child</p>
+        </div>
+    </section>
+    <section>
+        <p>normal paragraph</p>
+        <p class="fixed">
+            fixed: remains fixed in the same position, even when the page is scrolled.
+            <ul>
+                <li>IE does not support sticky positions.</li>
+                <li>Safari requires a -webkit- prefix for sticky positions.</li>
+            </ul>
+        </p>
+    </section>
+    <p>normal paragraph</p>
+    <p class="">
+        fixed: remains fixed in the same position, even when the page is scrolled.
+        <ul>
+            <li>IE does not support sticky positions.</li>
+            <li>Safari requires a -webkit- prefix for sticky positions.</li>
+        </ul>
+    </p>
+</section>
+</body>
+</html>
+
